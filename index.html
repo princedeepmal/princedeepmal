@@ -96,5 +96,81 @@ src="https://www.facebook.com/tr?id=726270430485195&ev=PageView&noscript=1"
   <script>
     lucide.createIcons();
   </script>
+  <script>
+/*
+  Meta Pixel event bindings for Pradip's site.
+  Paste this just before </body>.
+  It sends standard events: 'Lead' for contact clicks and 'Click' for socials.
+*/
+
+(function(){
+  // helper to safely call fbq
+  function sendEvent(name, params) {
+    if (typeof fbq === 'function') {
+      try { fbq('track', name, params || {}); }
+      catch(e){ console.warn('fbq error', e); }
+    } else {
+      console.warn('fbq not defined yet for event:', name);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+
+    // 1) Track the Contact link in the header/footer. Adjust selector if needed.
+    // Finds anchor with href starting with mailto or link to #contact
+    var contactAnchors = document.querySelectorAll('a[href^="mailto:"], a[href*="#contact"]');
+    contactAnchors.forEach(function(a){
+      a.addEventListener('click', function(){
+        // Use standard 'Lead' event for contact attempts
+        sendEvent('Lead');
+      });
+    });
+
+    // 2) Track a specific "hire/contact" or CTA button by id (if you add id="hireBtn")
+    var hireBtn = document.getElementById('hireBtn');
+    if (hireBtn) {
+      hireBtn.addEventListener('click', function(){
+        sendEvent('Contact'); // or 'Lead' if preferred
+      });
+    }
+
+    // 3) Track social icon clicks (LinkedIn, YouTube, Facebook, Instagram)
+    var socialSelectors = [
+      'a[href*="linkedin.com"]',
+      'a[href*="youtube.com"]',
+      'a[href*="facebook.com"]',
+      'a[href*="instagram.com"]'
+    ];
+    socialSelectors.forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(el){
+        el.addEventListener('click', function(){
+          // send a custom 'SocialClick' event with the network name
+          var network = (el.href.match(/linkedin|youtube|facebook|instagram/i) || ['social'])[0];
+          sendEvent('SocialClick', { social_network: network });
+        });
+      });
+    });
+
+    // 4) Track clicks on nav icons (home/about/contact)
+    // they are anchors in the header — we match by href fragment
+    document.querySelectorAll('nav a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        var target = a.getAttribute('href') || '';
+        sendEvent('NavClick', { target: target });
+      });
+    });
+
+    // 5) Optional: track profile image clicks (if desired)
+    var profileImg = document.querySelector('img[alt="Pradip Mal"]');
+    if (profileImg) {
+      profileImg.addEventListener('click', function(){
+        sendEvent('ViewProfile');
+      });
+    }
+
+  }); // DOMContentLoaded
+})(); 
+</script>
+
 </body>
 </html>
