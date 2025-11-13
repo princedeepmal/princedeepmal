@@ -3,22 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- favicon: PNG -->
-<link rel="icon" type="image/png" href="/princedeepmal/favicon.png" />
-<link rel="shortcut icon" href="/princedeepmal/favicon.png" />
+
+  <!-- Basic SEO -->
   <title>Pradip Mal — Social Media Marketer in India | Facebook & Instagram Ads</title>
-<meta name="description" content="Pradip Mal — Social media marketer helping brands in India grow with ROI-driven Facebook & Instagram ad campaigns, content strategy, and analytics.">
+  <meta name="description" content="Pradip Mal — Social media marketer helping brands in India grow with ROI-driven Facebook & Instagram ad campaigns, content strategy, and analytics.">
   <meta name="keywords" content="social media marketing, digital ads, paid campaigns, content strategy, brand growth, Pradip Mal" />
   <meta name="author" content="Pradip Mal" />
   <link rel="canonical" href="https://princedeepmal.github.io/princedeepmal/" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Pradip Mal — Social Media Marketer in India" />
-<meta property="og:description" content="I help brands grow with data-driven Facebook & Instagram ad campaigns." />
-<meta property="og:url" content="https://princedeepmal.github.io/princedeepmal/" />
-<meta property="og:image" content="https://princedeepmal.github.io/princedeepmal/profile.webp" />
-<meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Tailwind (CDN) -->
+  <!-- Theme color (mobile address bar) -->
+  <meta name="theme-color" content="#307878" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/princedeepmal/favicon.png" />
+  <link rel="shortcut icon" href="/princedeepmal/favicon.png" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Pradip Mal — Social Media Marketer in India" />
+  <meta property="og:description" content="I help brands grow with data-driven Facebook & Instagram ad campaigns." />
+  <meta property="og:url" content="https://princedeepmal.github.io/princedeepmal/" />
+  <meta property="og:image" content="https://princedeepmal.github.io/princedeepmal/profile.webp" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Pradip Mal" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@pradipmal01" />
+
+  <!-- Tailwind (CDN) & lucide icons -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://unpkg.com/lucide@0.553.0/dist/umd/lucide.min.js"></script>
 
@@ -30,7 +41,7 @@
     }
   </style>
 
-  <!-- Meta Pixel Code (kept as you had it) -->
+  <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -71,9 +82,11 @@
 <body class="bg-gray-50 text-gray-800 antialiased">
   <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
     <nav class="max-w-5xl mx-auto flex justify-between items-center p-4" aria-label="Primary">
-      <h1 class="text-xl font-semibold text-[color:var(--theme-color)]">
-  Pradip Mal <span class="text-gray-600 text-sm font-normal">| Digital Marketer</span>
-</h1>
+      <!-- site title (not a page H1) -->
+      <div class="text-xl font-semibold text-[color:var(--theme-color)]" aria-hidden="true">
+        Pradip Mal <span class="text-gray-600 text-sm font-normal">| Digital Marketer</span>
+      </div>
+
       <ul class="flex gap-6">
         <li>
           <a class="flex items-center gap-1 hover:text-[color:var(--theme-color)]" href="#home" aria-label="Home">
@@ -101,15 +114,17 @@
        <img
   src="profile.webp"
   alt="Pradip Mal - Social Media Marketer in India"
+  decoding="async"
   loading="eager"
   width="160"
   height="160"
   class="w-40 h-40 mx-auto rounded-full border-4 border-[color:var(--theme-color)] object-cover shadow-lg"
   style="object-position: center 30%;"
-/>
-        <h2 class="text-3xl md:text-4xl font-bold mt-6 text-[color:var(--theme-color)]">
+  />
+        <!-- hero headline is the single H1 on the page for best semantic structure -->
+        <h1 class="text-3xl md:text-4xl font-bold mt-6 text-[color:var(--theme-color)]">
   Helping Brands Grow Online with Creative Ads & Data-Driven Strategy
-</h2>
+</h1>
 
 <p class="text-lg mt-3 text-gray-700 max-w-2xl mx-auto">
   I'm a social media marketer helping brands grow online through creative ad campaigns, content strategy,
@@ -127,7 +142,7 @@
     <!-- About / Services -->
     <section id="about" class="bg-gray-100 py-16">
   <div class="max-w-5xl mx-auto text-center px-4">
-    <h3 class="text-3xl font-semibold text-[color:var(--theme-color)] mb-4">About Me</h3>
+    <h2 class="text-3xl font-semibold text-[color:var(--theme-color)] mb-4">About Me</h2>
 
     <p class="text-base text-gray-700 mb-6 max-w-3xl mx-auto">
       I blend creative ad ideas with analytics to grow brand awareness and revenue. I specialise in
@@ -166,119 +181,44 @@
       </div>
     </div>
   </div>
- <!-- Trust Section -->
-<div class="mt-14 text-center animate-fadeIn">
-  <p class="text-sm text-gray-500 tracking-wide flex items-center justify-center gap-2">
-    <span class="text-yellow-500 text-lg">⭐</span>
-    Trusted by <span class="font-medium text-gray-700">20+ small businesses</span> for performance-first ad campaigns.
-  </p>
-</div>
-<!-- Animation using Tailwind custom class -->
-<style>
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fadeIn {
-    animation: fadeIn 2s ease-out forwards;
-  }
-</style>
+
+  <!-- Trust Section -->
+  <div class="mt-14 text-center animate-fadeIn">
+    <p class="text-sm text-gray-500 tracking-wide flex items-center justify-center gap-2">
+      <span class="text-yellow-500 text-lg">⭐</span>
+      Trusted by <span class="font-medium text-gray-700">20+ small businesses</span> for performance-first ad campaigns.
+    </p>
+  </div>
+
+  <!-- Animation using Tailwind custom class -->
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 2s ease-out forwards;
+    }
+  </style>
 </section>
+
+<!-- Contact (single contact id) -->
 <section id="contact" class="max-w-2xl mx-auto py-8 px-4">
   <h3 class="text-xl font-semibold text-[color:var(--theme-color)] mb-4 text-center">Contact Me</h3>
 
   <form action="https://formspree.io/f/xjkjkgjd" method="POST" class="space-y-3">
 
-  <!-- Redirect after success -->
-  <input type="hidden" name="_next" value="https://princedeepmal.github.io/princedeepmal/thankyou.html">
+    <!-- Redirect after success -->
+    <input type="hidden" name="_next" value="https://princedeepmal.github.io/princedeepmal/thankyou.html">
 
-  <input name="name" required placeholder="Your name" class="w-full p-3 border rounded" />
-  
-  <input type="email" name="email" required placeholder="Your email" class="w-full p-3 border rounded" />
+    <input name="name" required placeholder="Your name" class="w-full p-3 border rounded" />
+    
+    <input type="email" name="email" required placeholder="Your email" class="w-full p-3 border rounded" />
 
-  <textarea name="message" rows="5" required placeholder="Message" class="w-full p-3 border rounded"></textarea>
+    <textarea name="message" rows="5" required placeholder="Message" class="w-full p-3 border rounded"></textarea>
 
-  <button type="submit" class="bg-[color:var(--theme-color)] text-white px-6 py-3 rounded">
-    Send Message
-  </button>
-</form>
-
-    <!-- Contact / Footer -->
-    <footer id="contact" class="bg-white py-10 border-t">
-      <div class="max-w-5xl mx-auto text-center">
-        <h4 class="text-xl font-semibold text-[color:var(--theme-color)] mb-4">Let's Connect</h4>
-
-        <div class="flex justify-center gap-6 mb-4 text-[color:var(--theme-color)]">
-          <a href="https://www.linkedin.com/in/pradip-mal-b82835395" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i data-lucide="linkedin" aria-hidden="true"></i>
-            <span class="sr-only">LinkedIn</span>
-          </a>
-          <a href="https://www.youtube.com/@pradipmal01" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <i data-lucide="youtube" aria-hidden="true"></i>
-            <span class="sr-only">YouTube</span>
-          </a>
-          <a href="https://www.facebook.com/people/Pradip-Mal/61583154399538/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <i data-lucide="facebook" aria-hidden="true"></i>
-            <span class="sr-only">Facebook</span>
-          </a>
-          <a href="https://www.instagram.com/pradipmal01/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <i data-lucide="instagram" aria-hidden="true"></i>
-            <span class="sr-only">Instagram</span>
-          </a>
-        </div>
-
-        <p class="text-gray-600">📧 <a href="mailto:princedeep.mal@gmail.com" class="underline">princedeep.mal@gmail.com</a></p>
-        <p class="mt-3 text-sm text-gray-500">© 2025 Pradip Mal. All rights reserved.</p>
-      </div>
-    </footer>
-  </main>
-
-  <!-- lucide icons init -->
-  <script>lucide.createIcons();</script>
-
-  <!-- Meta Pixel event bindings (improved, safe) -->
-  <script>
-  (function(){
-    function sendEvent(name, params) {
-      if (typeof fbq === 'function') {
-        try { fbq('track', name, params || {}); }
-        catch(e){ console.warn('fbq error', e); }
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', function(){
-      var contactAnchors = document.querySelectorAll('a[href^="mailto:"], a[href*="#contact"]');
-      contactAnchors.forEach(function(a){
-        a.addEventListener('click', function(){ sendEvent('Lead'); });
-      });
-
-      var socialSelectors = [
-        'a[href*="linkedin.com"]',
-        'a[href*="youtube.com"]',
-        'a[href*="facebook.com"]',
-        'a[href*="instagram.com"]'
-      ];
-      socialSelectors.forEach(function(sel){
-        document.querySelectorAll(sel).forEach(function(el){
-          el.addEventListener('click', function(){
-            var network = (el.href.match(/linkedin|youtube|facebook|instagram/i) || ['social'])[0];
-            sendEvent('SocialClick', { social_network: network });
-          });
-        });
-      });
-
-      document.querySelectorAll('nav a[href^="#"]').forEach(function(a){
-        a.addEventListener('click', function(){ sendEvent('NavClick', { target: a.getAttribute('href') }); });
-      });
-
-      var profileImg = document.querySelector('img[alt^="Pradip Mal"]');
-      if (profileImg) {
-        profileImg.addEventListener('click', function(){ sendEvent('ViewProfile'); });
-      }
-    });
-  })();
-  </script>
-</body>
-</html>
-
-
+    <button type="submit" class="bg-[color:var(--theme-color)] text-white px-6 py-3 rounded">
+      Send Message
+    </button>
+  </form>
+</section
